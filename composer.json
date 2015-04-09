@@ -20,9 +20,6 @@
 		"phpunit/phpunit": "~4.0"
 	},
 	"autoload": {
-		"files": [
-			"src/HieuLe/PhpBootstrapper/helpers.php"
-		],
 		"psr-4": {
 			"HieuLe\\Alert\\": "src/"
 		}
