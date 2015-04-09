@@ -19,12 +19,11 @@ class AlertServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $this->package('hieu-le/alert');
+        $this->package('hieu-le/alert', 'alert', __DIR__);
     }
 
     public function register()
     {
-        $this->app['config']->package('hieule/php-bootstrapper', __DIR__ . '/../../config');
         $this->app['alert'] = $this->app->share(function($app) {
             return new Alert($app['session.store'], $app['config'], $app['view']);
         });

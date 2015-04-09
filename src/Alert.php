@@ -63,18 +63,32 @@ class Alert extends MessageBag
         parent::__construct($messages);
     }
 
+    /**
+     * Flash current message to the next request
+     * 
+     * @return \HieuLe\Alert\Alert
+     */
     public function flash()
     {
         $this->session->flash($this->_getSessionKey(), $this->messages);
         return $this;
     }
 
+    /**
+     * Write current messages into string
+     * 
+     * @return string
+     */
     public function dump()
     {
         $all = array();
         foreach ($this->messages as $key => $messages)
         {
-            $icons   = $this->_getIcons();
+            $icons = $this->config->get('alert::icons');
+            if (empty($messages))
+            {
+                continue;
+            }
             $content = $this->view->make($this->config->get('alert::view'), [
                         'icon'     => isset($icons[$key]) ? $icons[$key] : null,
                         'type'     => $key,
@@ -82,41 +96,66 @@ class Alert extends MessageBag
                     ])->render();
             $all[]   = $content;
         }
-        return $all;
+        return empty($all) ? "" : implode("\n", $all);
     }
 
+    /**
+     * Add a success message
+     * 
+     * @param string $message
+     * @return \HieuLe\Alert\Alert
+     */
     public function success($message)
     {
         $this->add('success', $message);
         return $this;
     }
 
+    /**
+     * Add an info message
+     * 
+     * @param string $message
+     * @return \HieuLe\Alert\Alert
+     */
     public function info($message)
     {
         $this->add('info', $message);
         return $this;
     }
 
+    /**
+     * Add a warning message
+     * 
+     * @param string $message
+     * @return \HieuLe\Alert\Alert
+     */
     public function warning($message)
     {
         $this->add('warning', $message);
         return $this;
     }
 
+    /**
+     * Add an error message
+     * 
+     * @param string $message
+     * @return \HieuLe\Alert\Alert
+     */
     public function error($message)
     {
         $this->add('error', $message);
         return $this;
     }
 
+    /**
+     * Get the session key name for messages
+     * 
+     * @return string
+     */
     private function _getSessionKey()
     {
         return $this->config->get('alert::session_key');
     }
 
-    private function _getIcons()
-    {
-        return $this->config->get('alert::icons');
-    }
 
 }
