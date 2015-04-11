@@ -9,12 +9,12 @@ return [
     /**
      * The icons for types of message
      */
-    'icons'       => array(
+    'icons'       => [
         'success' => '<i class="fa fa-check"></i>',
         'info'    => '<i class="fa fa-info"></i>',
         'warning' => '<i class="fa fa-warning"></i>',
-        'error'   => '<i class="fa fa-ban"></i>',
-    ),
+        'error'   => '<i class="fa fa-times"></i>',
+    ],
     
     /**
      * The view name for rendering messages

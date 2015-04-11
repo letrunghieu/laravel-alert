@@ -36,18 +36,6 @@ class Alert extends MessageBag
      */
     protected $view;
 
-    /**
-     * Supported message levels
-     *
-     * @var array
-     */
-    protected $levels = [
-        'success',
-        'info',
-        'warning',
-        'danger'
-    ];
-
     public function __construct(Store $session, Repository $config, Factory $view, array $messages = array())
     {
         $this->session = $session;
@@ -77,12 +65,15 @@ class Alert extends MessageBag
     /**
      * Write current messages into string
      * 
+     * @param array $errors laravel validation formated errors to be merged
+     * 
      * @return string
      */
-    public function dump()
+    public function dump(array $errors = [])
     {
-        $all = array();
-        foreach ($this->messages as $key => $messages)
+        $all            = array();
+        $mergedMessages = array_merge_recursive($this->messages, ['error' => $errors]);
+        foreach ($mergedMessages as $key => $messages)
         {
             $icons = $this->config->get('alert.icons');
             if (empty($messages))
@@ -156,6 +147,5 @@ class Alert extends MessageBag
     {
         return $this->config->get('alert.session_key');
     }
-
 
 }
