@@ -66,3 +66,15 @@ Open `config/alert.php` file and change these settings:
 * `session_key`: the name of the session key that stored messages between requests. You normally do not want to edit its value
 * `icon`: the icon for each type of message when rendered in the default view. You can remove the value of one key to disable the icon for that type of message.
 * `view`: the name of the view being used to render each type of message. In the view, you can use 2 variables: `$icon` is the icon of this message type; `$messages`: an array of messages of the current message type
+
+## Work with Laravel validation errors result
+
+To display the validation error, simply add another parameter to the `Alert::dump` method. For example
+
+```php
+// In each view, there is a special variable call $errors
+// This is the validation errors that is set by calling "withError" method as
+// guided at http://laravel.com/docs/5.0/validation#error-messages-and-views
+
+echo Alert::dump($errors->all()); 
+```
