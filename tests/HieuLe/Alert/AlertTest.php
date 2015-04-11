@@ -88,7 +88,7 @@ class AlertTest extends \PHPUnit_Framework_TestCase
 
         $config->expects($this->any())
                 ->method('get')
-                ->with('alert::session_key')
+                ->with('alert.session_key')
                 ->willReturn('laravel_alert_messages');
 
         $alert = new Alert($session, $config, $view);
