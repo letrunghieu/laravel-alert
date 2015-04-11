@@ -13,7 +13,7 @@ return [
         'success' => '<i class="fa fa-check"></i>',
         'info'    => '<i class="fa fa-info"></i>',
         'warning' => '<i class="fa fa-warning"></i>',
-        'danger'  => '<i class="fa fa-ban"></i>',
+        'error'   => '<i class="fa fa-ban"></i>',
     ),
     
     /**
