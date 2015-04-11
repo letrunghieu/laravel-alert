@@ -21,7 +21,7 @@ class AlertServiceProvider extends ServiceProvider
     {
         $this->loadViewsFrom(__DIR__ . "/views", 'alert');
         $this->loadTranslationsFrom(__DIR__ . "/lang", 'alert');
-        $this->mergeConfigFrom(__DIR__ . "/config", 'alert');
+        $this->mergeConfigFrom(__DIR__ . "/config/config.php", 'alert');
     }
 
     public function register()
