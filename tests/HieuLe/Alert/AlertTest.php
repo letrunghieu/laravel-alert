@@ -44,14 +44,14 @@ class AlertTest extends \PHPUnit_Framework_TestCase
         $this->_config->expects($this->atLeastOnce())
                 ->method('get')
                 ->willReturnMap([
-                    ['alert::session_key', null, 'laravel_alert_messages'],
-                    ['alert::icons', null, [
+                    ['alert.session_key', null, 'laravel_alert_messages'],
+                    ['alert.icons', null, [
                             'success' => '<i class="fa fa-check"></i>',
                             'info'    => '<i class="fa fa-info"></i>',
                             'warning' => '<i class="fa fa-warning"></i>',
                             'error'   => '<i class="fa fa-times"></i>',
                         ]],
-                    ['alert::view', null, 'alert::alert']
+                    ['alert.view', null, 'alert::alert']
         ]);
     }
 
