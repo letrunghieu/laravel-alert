@@ -84,12 +84,12 @@ class Alert extends MessageBag
         $all = array();
         foreach ($this->messages as $key => $messages)
         {
-            $icons = $this->config->get('alert::icons');
+            $icons = $this->config->get('alert.icons');
             if (empty($messages))
             {
                 continue;
             }
-            $content = $this->view->make($this->config->get('alert::view'), [
+            $content = $this->view->make($this->config->get('alert.view'), [
                         'icon'     => isset($icons[$key]) ? $icons[$key] : null,
                         'type'     => $key,
                         'messages' => $messages,
@@ -154,7 +154,7 @@ class Alert extends MessageBag
      */
     private function _getSessionKey()
     {
-        return $this->config->get('alert::session_key');
+        return $this->config->get('alert.session_key');
     }
 
 
