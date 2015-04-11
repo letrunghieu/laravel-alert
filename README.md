@@ -1,6 +1,6 @@
 # Laravel Alert
 
-Global site message system for **Laravel 4**
+Global site message system for **Laravel 4** (for Laravel 5, see [laravel-5](https://github.com/letrunghieu/laravel-alert/tree/laravel-5) branch)
 
 ## The purpose of this package:
 
@@ -19,13 +19,13 @@ Add this to your `composer.json` file.
 "hieu-le/laravel-alert": "~1.0"
 ```
 
-Run `composer update` to update all dependencies. After that, register the service provider for Laravel by adding this line to the `provider` array in `app/config/app.php`
+Run `composer update` to update all dependencies. After that, register the service provider for Laravel by adding this line to the `providers` array in `app/config/app.php`
 
 ```php
 'HieuLe\Alert\AlertServiceProvider',
 ```
 
-And add this alias to the `alias` array in `app/config/app.php`
+And add this alias to the `aliases` array in `app/config/app.php`
 
 ```php
 'Alert' => 'HieuLe\Alert\Facades\Alert',
@@ -45,7 +45,7 @@ Alert::warning($message);
 Alert::error($message);
 ```
 
-To make these message available in next request, you must call `Alert::flash()` at least one time. A convenient way to do this is add this line the the `after` global filter (in `filters.php` file). 
+To make these message available in next request, you must call `Alert::flash()` at least one time.
 
 ```php
 Alert::flash()
