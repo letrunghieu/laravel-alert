@@ -19,7 +19,9 @@ class AlertServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $this->package('hieu-le/alert', 'alert', __DIR__);
+        $this->loadViewsFrom(__DIR__ . "/views", 'alert');
+        $this->loadTranslationsFrom(__DIR__ . "/lang", 'alert');
+        $this->mergeConfigFrom(__DIR__ . "/config", 'alert');
     }
 
     public function register()
