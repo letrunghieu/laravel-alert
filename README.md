@@ -1,5 +1,12 @@
 # Laravel Alert
 
+[![Build Status](https://travis-ci.org/letrunghieu/laravel-alert.svg)](https://travis-ci.org/letrunghieu/laravel-alert)
+[![Latest Stable Version](https://poser.pugx.org/hieu-le/laravel-alert/v/stable)](https://packagist.org/packages/hieu-le/laravel-alert)
+[![Code Climate](https://codeclimate.com/github/letrunghieu/laravel-alert/badges/gpa.svg)](https://codeclimate.com/github/letrunghieu/laravel-alert)
+[![Test Coverage](https://codeclimate.com/github/letrunghieu/laravel-alert/badges/coverage.svg)](https://codeclimate.com/github/letrunghieu/laravel-alert/coverage)
+[![Total Downloads](https://poser.pugx.org/hieu-le/laravel-alert/downloads)](https://packagist.org/packages/hieu-le/laravel-alert)
+[![License](https://poser.pugx.org/hieu-le/laravel-alert/license)](https://packagist.org/packages/hieu-le/laravel-alert)
+
 Global site message system for **Laravel 4** (for Laravel 5, see [laravel-5](https://github.com/letrunghieu/laravel-alert/tree/laravel-5) branch)
 
 ## The purpose of this package:
