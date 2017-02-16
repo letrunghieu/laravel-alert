@@ -24,7 +24,7 @@ class AlertServiceProvider extends ServiceProvider
 
     public function register()
     {
-        $this->app['alert'] = $this->app->share(function($app) {
+        $this->app['alert'] = $this->app->singleton('alert', function($app) {
             return new Alert($app['session.store'], $app['config'], $app['view']);
         });
     }
