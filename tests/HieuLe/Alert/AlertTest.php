@@ -27,7 +27,7 @@ class AlertTest extends TestCase
      */
     private $_view;
 
-    protected function setUp()
+    public function setUp()
     {
         parent::setUp();
 
