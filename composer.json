@@ -25,5 +25,15 @@
 			"HieuLe\\Alert\\": "src/"
 		}
 	},
-	"minimum-stability": "stable"
+	"minimum-stability": "stable",
+	"extra": {
+		"laravel": {
+			"providers": [
+				"HieuLe\\Alert\\AlertServiceProvider"
+			],
+			"aliases": {
+				"Alert": "HieuLe\\Alert\\Facades\\Alert"
+			}
+		}
+	}
 }
