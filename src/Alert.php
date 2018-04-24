@@ -3,9 +3,9 @@
 namespace HieuLe\Alert;
 
 use \Illuminate\Support\MessageBag;
-use \Illuminate\Session\Store;
-use \Illuminate\Config\Repository;
-use \Illuminate\View\Factory;
+use \Illuminate\Contracts\Session\Session;
+use \Illuminate\Contracts\Config\Repository;
+use \Illuminate\Contracts\View\Factory;
 
 /**
  * The global site message system for Laravel
@@ -18,7 +18,7 @@ class Alert extends MessageBag
     /**
      * Laravel session
      *
-     * @var type 
+     * @var Session
      */
     protected $session;
 
@@ -36,7 +36,7 @@ class Alert extends MessageBag
      */
     protected $view;
 
-    public function __construct(Store $session, Repository $config, Factory $view, array $messages = array())
+    public function __construct(Session $session, Repository $config, Factory $view, array $messages = array())
     {
         $this->session = $session;
         $this->config  = $config;
